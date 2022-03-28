@@ -7,7 +7,7 @@ class PhoneBook(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(150))
     number = db.Column(db.String(11))
-    date = db.Column(db.DateTime(timezone=True), default=func.now())
+    #date = db.Column(db.DateTime(timezone=True), default=func.now())
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 class User(db.Model, UserMixin):

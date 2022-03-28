@@ -3,6 +3,25 @@
 
 {% block content %}
 
-<h1>This is the home page</h1>
+    <h1 align="center">Phone Numbers</h1>
+    <ul class="list-group list-group--flush" id="numbers">
+        {% for n in user.numbers %}
+            <li class="list-group-item">
+                {{n.name}}
+                {{n.number}}
+                <button type="button" class="close" onClick="deleteNumber({{ n.id }})">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </li>
+        {% endfor %}
+    </ul>
+    <form method="POST">
+        <textarea name="name" id="name" cols="10" rows="10" class="form-control"></textarea>
+        <textarea name="number" id="number" cols="10" rows="10" class="form-control"></textarea>
 
+        <div align="center">
+            <button type="submit" class="btn btn-primary">Add Number</button>
+        </div>
+    </form>
+    
 {% endblock %}
