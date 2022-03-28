@@ -1,5 +1,6 @@
 from unicodedata import category
 from flask import Blueprint, render_template, request, flash, jsonify
+from flask import after_this_request
 from flask_login import login_user, login_required, login_url, current_user, logout_user
 from .import db
 import json
@@ -24,16 +25,15 @@ def home():
 
     return render_template("home.html", user=current_user) 
 
-@views.route('/delete-number' , methods=["POST"])
-def delete_number():
+@views.route('/delete-note', methods=['POST'])
+def delete_note():
 
-    name = json.loads(request.name)
-    nameID = name['nameID']
-    name = PhoneBook.query.get(nameID)
-    
-    if name:
-        if name.user_id == current_user.id:
-            db.session.delete(name)
+    note = json.loads(request.data)
+    noteId = note['noteId']
+    note = PhoneBook.query.get(noteId)
+    if note:
+        if note.user_id == current_user.id:
+            db.session.delete(note)
             db.session.commit()
-
+                
     return jsonify({})

@@ -3,18 +3,29 @@
 
 {% block content %}
 
+    <script>
+        function deleteNote(noteId) {
+            fetch("/delete-note" , {
+                method : "POST",
+                body: JSON.stringify({noteId: noteId}),
+            }) .then((_res) => {
+                window.location.href = "/home";
+            });
+        } 
+    </script>
+
     <h1 align="center">Phone Numbers</h1>
     <ul class="list-group list-group--flush" id="numbers">
         {% for n in user.numbers %}
             <li class="list-group-item">
                 {{n.name}}
                 {{n.number}}
-                <button type="button" class="close" onClick="deleteNumber({{ n.id }})">
+                <button type="button" class="close" onClick="deleteNote({{n.id}})">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </li>
         {% endfor %}
-    </ul>
+    </ul> 
     <form method="POST">
         <textarea name="name" id="name" cols="10" rows="10" class="form-control"></textarea>
         <textarea name="number" id="number" cols="10" rows="10" class="form-control"></textarea>
@@ -23,5 +34,19 @@
             <button type="submit" class="btn btn-primary">Add Number</button>
         </div>
     </form>
-    
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type=text/javascript>
+        $(function() {
+          $('a#test').on('click', function(e) {
+            e.preventDefault()
+            $.getJSON('/background_process_test',
+                function(data) {
+              //do nothing
+            });
+            return false;
+          });
+        });
+    </script>
+
 {% endblock %}
