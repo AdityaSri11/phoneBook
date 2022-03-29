@@ -3,41 +3,53 @@
 
 {% block content %}
 
-<form method="POST">
-    <h3 align="center">Sign up</h3>
-    <div class="form-group">
+<form method="POST" style="background-color: #01b0d3; border-radius: 30px; margin-top:10%;">
+    <br>
+    <h3 align="center" style="text-decoration: underline; color:#242333; text-align: center;">Sign up</h3>
+    <br>
+    <div class="form-group" style="text-align: center;">
 
-        <label for="email">Email Address:</label>
-            <input type="email" 
-            name="email" 
-            id="email" 
-            class="form-control" 
-            placeholder="yourname@email.com"/>
-
-        <label for="firstName">Name:</label>
-            <input type="text" 
-            name="firstName" 
-            id="firstName" 
-            class="form-control" 
-            placeholder="Type full name here..."/>
-
-        <label for="password1">Password:</label>
-            <input type="password" 
-            name="password1" 
-            id="password1" 
-            class="form-control" 
-            placeholder="Enter password: "/>
-
-        <label for="password2">Confirm Password:</label>
-            <input type="password" 
-            name="password2" 
-            id="password2" 
-            class="form-control" 
-            placeholder="Enter password (confirm): "/>
+        <div style="color:#242333; background:#01b0d3;">
+            <label for="email" style="margin-right:265px">Email Address:</label>
+                <input type="email" 
+                style="width:400px; position: relative; margin-left: 33%; "
+                name="email" 
+                id="email" 
+                class="form-control" 
+                placeholder="yourname@email.com"/>
+            <br>
+            <label for="firstName" style="margin-right:325px">Name:</label>
+                <input type="text" 
+                style="width:400px; position: relative; margin-left: 33%; "
+                name="firstName" 
+                id="firstName" 
+                class="form-control" 
+                placeholder="Type full name here..."/>
+            <br>
+            <label for="password1" style="margin-right:297px">Password:</label>
+                <input type="password" 
+                style="width:400px; position: relative; margin-left: 33%; "
+                name="password1" 
+                id="password1" 
+                class="form-control" 
+                placeholder="Enter password: "/>
+            <br>
+            <label for="password2" style="margin-right:235px">Confirm Password:</label>
+                <input type="password" 
+                style="width:400px; position: relative; margin-left: 33%; "
+                name="password2" 
+                id="password2" 
+                class="form-control" 
+                placeholder="Enter password (confirm): "/>
+        </div>
     </div>
-    <br />
+    <br/>
 
-    <button type="submit" class="butn btn-primary">Sign-Up</button>
+    <button type="submit" class="butn btn-primary" style="text-align: center; background-color: white; color: black;
+    margin: 0 auto;
+    display: block;
+    border: 2px solid #E8E8E8;">Sign-Up</button>
+    <br>
 </form>
 
 {% endblock %}
