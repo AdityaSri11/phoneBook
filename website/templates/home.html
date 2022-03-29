@@ -14,7 +14,9 @@
         } 
     </script>
 
-    <h1 align="center">Phone Numbers</h1>
+    <br>
+    <h2 align="center" style="color:white;">Phone Numbers</h2>
+    <br>
     <ul class="list-group list-group--flush" id="numbers">
         {% for n in user.numbers %}
             <li class="list-group-item">
@@ -25,11 +27,21 @@
                 </button>
             </li>
         {% endfor %}
+        <br>
+        <br>
     </ul> 
+    
     <form method="POST">
-        <textarea name="name" id="name" cols="10" rows="10" class="form-control"></textarea>
-        <textarea name="number" id="number" cols="10" rows="10" class="form-control"></textarea>
+        <div align="center">
+            <textarea name="name" id="name" cols="10" rows="10" class="form-control" style="
+            width:250px; height:40px; resize: none; display: inline-block; margin-right:5%;"
+            placeholder="Contact Name"></textarea>
 
+            <textarea name="number" id="number" cols="10" rows="10" class="form-control"style="
+            width:250px; height:40px; resize: none; display: inline-block; margin-left:5%;" 
+        placeholder="Phone Number"></textarea>
+        </div>
+        <br>
         <div align="center">
             <button type="submit" class="btn btn-primary">Add Number</button>
         </div>
