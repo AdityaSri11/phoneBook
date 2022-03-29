@@ -35,9 +35,10 @@
                 
                 <div class="collapse navbar-collapse" id="navbar" style="display: flex; justify-content: flex-end">
                     <div class="navbar-nav">
+                        <a class="nav-item nav-link" id="about" href="/about">About</a>
                         <a class="nav-item nav-link" target="_blank" href="https://aditya-srikanth-portfolio.vercel.app/" >Creator Info</a>
                         {% if user.is_authenticated %}
-                            <a class="nav-item nav-link" id="home" href="/home">Home</a>
+                            <a class="nav-item nav-link" id="home" href="/contacts">Contacts</a>
                             <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
                         {% else %}
                             <a class="nav-item nav-link" id="login" href="/login">Login</a>

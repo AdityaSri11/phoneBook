@@ -9,7 +9,7 @@ from website.models import PhoneBook
 
 views = Blueprint('views' , __name__)
 
-@views.route('/home', methods=['GET' , 'POST'])
+@views.route('/contacts', methods=['GET' , 'POST'])
 @login_required
 def home(): 
     if request.method == 'POST':
@@ -37,3 +37,7 @@ def delete_note():
             db.session.commit()
                 
     return jsonify({})
+
+@views.route('/about',  methods=['GET' , 'POST'])
+def about():
+    return render_template("about.html", user=current_user) 
