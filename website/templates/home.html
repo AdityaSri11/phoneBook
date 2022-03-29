@@ -20,26 +20,47 @@
     <ul class="list-group list-group--flush" id="numbers">
         {% for n in user.numbers %}
             <li class="list-group-item">
-                {{n.name}}
-                {{n.number}}
-                <button type="button" class="close" onClick="deleteNote({{n.id}})">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <div class="split" style="display:flex">
+                    <div style="display:inline; flex:05;">{{n.name}}</div>
+                    <div style="display:inline; margin-right:20px;">
+                        
+                        {% if n.number|length == 10 %}
+                            ({{n.number[0:3]}})-{{n.number[3:6]}}-{{n.number[6:11]}}
+                        {% elif n.number|length == 11 %}
+                            +{{n.number[0]}}-({{n.number[1:4]}})-{{n.number[4:7]}}-{{n.number[8:12]}}
+                        {% else %}
+                            {{n.number}}
+                        {% endif %}
+                    </div>
+                
+                    <button type="button" class="close" onClick="deleteNote({{n.id}})">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
             </li>
         {% endfor %}
         <br>
         <br>
     </ul> 
     
-    <div align="center"><button type="submit" class="btn " onclick="openForm()" style="width:50%;
+    <div align="center"><button type="submit" class="btn" onclick="openForm()" style="width:50%;
     background-color:#01b0d3;">
     Add Contact</button></div>
+    
+    <br>
+
+    <h3 style="color:white; position: relative;
+    margin: auto;
+    bottom: 0;
+    text-align: center;
+    z-index: 9;">Welcome {{user.firstName}} to your contact book!</h3>
 
     <div class="form-popup" id="myForm" style="display: none;
     position: fixed;
     bottom: 0;
     right: 15px;
     border: 3px solid #f1f1f1;
+    background-color: #242333;
     z-index: 9;">
         <form method="POST" style="max-width: 300px; padding: 10px;">
             <div align="center">
@@ -70,6 +91,9 @@
           document.getElementById("myForm").style.display = "block";
         }
         
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
     </script>
 
 {% endblock %}
