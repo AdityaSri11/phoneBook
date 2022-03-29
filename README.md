@@ -20,9 +20,9 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## Requirements
-flask
-unicodedata
-sqlalchemy
-json
-werkzeug.security
-crypt
+1. flask
+2. unicodedata
+3. sqlalchemy
+4. json
+5. werkzeug.security
+6. crypt
