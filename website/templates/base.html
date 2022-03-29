@@ -19,17 +19,20 @@
 
             <title>{% block title %}Home{% endblock %}</title>
         </head>
-        <body style="background:gray">
+        <body style="background:#242333">
             
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-light" style="background: #01b0d3; font-weight: 4000;
+            text-align:center">
 
                 <button class="navbar-toggler" type = "button" data-toggle="collapse" data-target="#navbar">
                     <span class="navbar-toggler-icon">
 
                     </span>
                 </button>
+
+                <h3 class="collapse navbar-collapse" id="navbar" style="margin-left:10px">📞 &nbsp; Contact Book</h3>
                 
-                <div class="collapse navbar-collapse" id="navbar">
+                <div class="collapse navbar-collapse" id="navbar" style="display: flex; justify-content: flex-end">
                     <div class="navbar-nav">
                         {% if user.is_authenticated %}
                             <a class="nav-item nav-link" id="home" href="/home">Home</a>
