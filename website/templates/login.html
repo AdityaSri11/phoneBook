@@ -2,31 +2,40 @@
 {% block title %}Login{% endblock %}}
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/>
-<form method="POST">
+<form method="POST" style="background-color: navy; border-radius: 30px; margin-top:15%;">
     <br>
-    <h3 align="center" style="text-decoration: underline; color:white;">Login</h3>
+    <h3 align="center" style="text-decoration: underline; color:white; text-align: center;">Login</h3>
     <br>
-    <div class="form-group">
+        <div class="form-group" style="text-align: center;">
+            
+            <div style="color:white; background:navy;">
+                <label for="email">Email Address:</label>
+                    <input type="email" 
+                    style="width:400px; position: relative; margin-left: 33%; "
+                    name="email" 
+                    id="email" 
+                    class="form-control" 
+                    placeholder="yourname@email.com"/>
 
-        <div style="color:white";>
-            <label for="email" >Email Address:</label>
-                <input type="email" 
-                name="email" 
-                id="email" 
-                class="form-control" 
-                placeholder="yourname@email.com"/>
+                <br>
 
-            <label for="password">Password:</label>
-                <input type="password" 
-                name="password" 
-                id="password" 
-                class="form-control" 
-                placeholder="Enter password: "/>
-        
+                <label for="password">Password:</label>
+                    <input type="password" 
+                    style="width:400px; position: relative; margin-left: 33%; "
+                    name="password" 
+                    id="password" 
+                    class="form-control" 
+                    placeholder="Enter password: "/>
+            
+            </div>
         </div>
-    </div>
     <br />
 
-    <button type="submit" class="butn btn-primary">Login</button>
+    <button type="submit" class="butn btn-primary" style="text-align: center; background-color: white; color: black;
+    margin: 0 auto;
+    display: block;
+    border: 2px solid #E8E8E8;">Login</button>
+
+    <br>
 </form>
 {% endblock %}

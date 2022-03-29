@@ -24,7 +24,7 @@ def login():
             else:
                 flash('Incorrect password, try again', category='error')
         else:
-            flash('Account assosiated with email not found' , category='error')
+            flash('Account associated with email not found' , category='error')
 
     return render_template("login.html", user=current_user)
 
